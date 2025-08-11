@@ -10,13 +10,13 @@ while True:
           elev, azimut = map(int, input().split())
           if elev == 91 and azimut == 361:
             print("Point zero (＾• ω •＾)!!!\n")
-            PointZeroDown(azimut0)
-            PointZeroMove(elev0)
+            main.PointZeroDown(azimut0)
+            main.PointZeroMove(elev0)
           elif abs(elev) > 91 or abs(azimut) > 361:
             print("Error (〃＞＿＜;〃)\n")
           elif (elev<91 and azimut<361):
             print("mya-mya")
-            where(elev - elev0, azimut - azimut0)
+            main.where(elev - elev0, azimut - azimut0)
             elev0 = elev
             azimut0 = azimut
         except ValueError:

@@ -1,5 +1,6 @@
 # API
-<img width="512" height="430" alt="image" src="https://github.com/user-attachments/assets/7c8cff9a-eb33-4523-b105-c47ab7404139" />
+![Uploading image.png…]()
+
 
 Супер страшный набор кода, который не то, что использовать не надо, открывать не стоит, иначе можно погибнуть от уровня кринжа
 мяу-мяу

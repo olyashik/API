@@ -1,5 +1,20 @@
 import base_commands
-from base_commands import ProtivChStrMove, PoChStrMove, PoChStrDown, ProtivChStrDown, Step, StopMove, StopDown, step_motor_down, step_motor_move, 
+from base_commands import ProtivChStrMove, PoChStrMove, PoChStrDown, ProtivChStrDown, Step, StopMove, StopDown, step_motor_down, step_motor_move
+
+# Последовательность шагов для движения по часовой стрелке
+stepSequenceCW = [
+    [1, 0, 1, 0],
+    [0, 1, 1, 0],
+    [0, 1, 0, 1],
+    [1, 0, 0, 1]
+]
+# Последовательность шагов для движения против часовой стрелки
+stepSequenceCCW = [
+    [1, 0, 0, 1],
+    [0, 1, 0, 1],
+    [0, 1, 1, 0],
+    [1, 0, 1, 0]
+]
 
 # Возвращение в исхоную точку
 def PointZeroMove(Elev):
@@ -15,6 +30,7 @@ def PointZeroMove(Elev):
             k = 0
     StopMove()
 
+
 # Совместное движение
 def PoDownPoMove(SA, SE):
     j = 0
@@ -26,7 +42,7 @@ def PoDownPoMove(SA, SE):
             j += 1
         StopMove()
         PoChStrDown(SA - SE)
-            
+
     elif SE > SA:
         while j < SA:
             for i in range(4):
@@ -35,7 +51,8 @@ def PoDownPoMove(SA, SE):
             j += 1
         StopDown()
         PoChStrMove(SE - SA)
-        
+
+
 def ProtivDownProtivMove(SA, SE):
     j = 0
     if SA >= SE:
@@ -45,7 +62,7 @@ def ProtivDownProtivMove(SA, SE):
                 step_motor_move(stepSequenceCCW[i], 8)
             j += 1
         StopMove()
-        ProtivChStrDown(SA-SE)
+        ProtivChStrDown(SA - SE)
     elif SE > SA:
         while j < SA:
             for i in range(4):
@@ -53,7 +70,7 @@ def ProtivDownProtivMove(SA, SE):
                 step_motor_move(stepSequenceCCW[i], 8)
             j += 1
         StopDown()
-        ProtivChStrMove(SE-SA)
+        ProtivChStrMove(SE - SA)
 
 
 def PoDownProtivMove(SA, SE):
@@ -65,7 +82,7 @@ def PoDownProtivMove(SA, SE):
                 step_motor_move(stepSequenceCCW[i], 8)
             j += 1
         StopMove()
-        PoChStrDown(SA-SE)
+        PoChStrDown(SA - SE)
     elif SE > SA:
         while j < SA:
             for i in range(4):
@@ -73,7 +90,7 @@ def PoDownProtivMove(SA, SE):
                 step_motor_move(stepSequenceCCW[i], 8)
             j += 1
         StopDown()
-        ProtivChStrMove(SE-SA)
+        ProtivChStrMove(SE - SA)
 
 
 def ProtivDownPoMove(SA, SE):
@@ -85,7 +102,7 @@ def ProtivDownPoMove(SA, SE):
                 step_motor_move(stepSequenceCW[i], 8)
             j += 1
         StopMove()
-        ProtivChStrDown(SA-SE)
+        ProtivChStrDown(SA - SE)
     elif SE > SA:
         while j < SA:
             for i in range(4):
@@ -93,7 +110,7 @@ def ProtivDownPoMove(SA, SE):
                 step_motor_move(stepSequenceCW[i], 8)
             j += 1
         StopDown()
-        PoChStrMove(SE-SA)
+        PoChStrMove(SE - SA)
 
 
 # Возвращение в исхоную точку
@@ -107,11 +124,10 @@ def PointZeroDown(Azimut):
             PoChStrDown(Step(Azimut))
             k = 0
         else:
-            StopDown() 
+            StopDown()
             k = 0
     StopDown()
 
 # mya-mya
 
 
-       

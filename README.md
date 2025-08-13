@@ -7,4 +7,5 @@
 
 Мем дня: 
 
-<img width="736" height="730" alt="image" src="https://github.com/user-attachments/assets/b6ae7ab3-6219-403f-a897-5668ea183312" />
+---
+

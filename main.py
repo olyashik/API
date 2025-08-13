@@ -1,5 +1,6 @@
 import utils
 from base_commands import ProtivChStrMove, PoChStrMove, PoChStrDown, ProtivChStrDown, Step, StopMove, StopDown, step_motor_down, step_motor_move
+import copycat
 
 # Возвращение в исхоную точку
 def PointZeroMove(Elev):
@@ -113,6 +114,27 @@ def PointZeroDown(Azimut):
             k = 0
     StopDown()
 
+def where(E, A, TTX):
+    if TTX == "PoPo":
+        PoDownPoMove(Step(A), Step(E))
+    elif TTX == "ProtivProtiv":
+        ProtivDownProtivMove(Step(A), Step(E))
+    elif TTX == "PoProtiv":
+        PoDownProtivMove(Step(A), Step(E))
+    elif TTX == "ProtivPo":
+        ProtivDownPoMove(Step(A), Step(E))
+    StopMove()
+    StopDown()
+
 # mya-mya
+while True:
+    if copycat.tx == "Point zero":
+        PointZeroDown(copycat.azimut0)
+        PointZeroMove(copycat.elev0)
+    elif copycat.tx == "error":
+        StopDown()
+        StopMove()
+    elif copycat.tx == "Go":
+        where(copycat.elev - copycat.elev0, copycat.azimut - copycat.azimut0, copycat.ttx)
 
 

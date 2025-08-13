@@ -1,3 +1,4 @@
+# mur
 import main
 
 # Начальная точка

@@ -127,14 +127,14 @@ def where(E, A, TTX):
     StopDown()
 
 # mya-mya
-while True:
-    if copycat.tx == "Point zero":
-        PointZeroDown(copycat.azimut0)
-        PointZeroMove(copycat.elev0)
-    elif copycat.tx == "error":
-        StopDown()
-        StopMove()
-    elif copycat.tx == "Go":
-        where(copycat.elev - copycat.elev0, copycat.azimut - copycat.azimut0, copycat.ttx)
+
+if copycat.tx == "Point zero":
+    PointZeroDown(copycat.azimut0)
+    PointZeroMove(copycat.elev0)
+elif copycat.tx == "error":
+    StopDown()
+    StopMove()
+elif copycat.tx == "Go":
+    where(copycat.elev - copycat.elev0, copycat.azimut - copycat.azimut0, copycat.ttx)
 
 

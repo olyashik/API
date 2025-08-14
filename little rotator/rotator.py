@@ -1,6 +1,9 @@
 import utils
 from base_commands import ProtivChStrMove, PoChStrMove, PoChStrDown, ProtivChStrDown, Step, StopMove, StopDown, step_motor_down, step_motor_move
-import copycat
+from machine import UART, Pin
+
+from mind import azimut, azimut0
+
 
 # Возвращение в исхоную точку
 def PointZeroMove(Elev):
@@ -114,27 +117,28 @@ def PointZeroDown(Azimut):
             k = 0
     StopDown()
 
-def where(E, A, TTX):
-    if TTX == "PoPo":
+def where(E, A):
+    if (elev>0) and (azimut>0):
         PoDownPoMove(Step(A), Step(E))
-    elif TTX == "ProtivProtiv":
+    elif (elev<0) and (azimut<0):
         ProtivDownProtivMove(Step(A), Step(E))
-    elif TTX == "PoProtiv":
+    elif (elev>0) and (azimut<0):
         PoDownProtivMove(Step(A), Step(E))
-    elif TTX == "ProtivPo":
+    elif (elev<0) and (azimut>0):
         ProtivDownPoMove(Step(A), Step(E))
     StopMove()
     StopDown()
 
 # mya-mya
+uart = UART(0, 115200, tx=Pin(0), rx=Pin(1))
 
-if copycat.tx == "Point zero":
-    PointZeroDown(copycat.azimut0)
-    PointZeroMove(copycat.elev0)
-elif copycat.tx == "error":
-    StopDown()
-    StopMove()
-elif copycat.tx == "Go":
-    where(copycat.elev - copycat.elev0, copycat.azimut - copycat.azimut0, copycat.ttx)
+if uart.any():
+    data =uart.readline()
+    azimut, elev = data.split()
+    if azimut == 361 and elev == 91:
+        PointZeroDown(azimut)
+        PointZeroMove(elev)
+    else:
+        where(elev, azimut)
 
 

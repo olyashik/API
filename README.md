@@ -12,6 +12,7 @@
 
 
 Чтобы подключить библиотеку со смешным названием API, необходимо сделать следующее:
+
 **1.** Скачать библиотеку командой 
 ```
 git clone https://github.com/olyashik/API.git
@@ -43,6 +44,7 @@ git clone https://github.com/olyashik/API.git
 ## Кот дня: 
 
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/24378a34-6aa4-4327-9d87-3a291478accd" />
+
 
 
 

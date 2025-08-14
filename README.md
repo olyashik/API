@@ -36,11 +36,14 @@ git clone https://github.com/olyashik/API.git
 Подробности будут позже. Автор данного readme сам ещё не всё понимает
 
 
+
+
 ...а котики нет
 
 ## Кот дня: 
 
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/24378a34-6aa4-4327-9d87-3a291478accd" />
+
 
 
 

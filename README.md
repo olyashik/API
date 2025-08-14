@@ -28,8 +28,10 @@ git clone https://github.com/olyashik/API.git
 3. Загрузить скрипт manual_control.py
 4. Указать протокол связи с rpi pico 2 (TX, RX) и ПК (RS485)
 
-**4.** Скрипт biba.py открывается в любой удобной python среде и запускается. Всё?
+**4.** Скрипт biba.py открывается в любой удобной python среде и запускается.
 **Важно!** Проверить, что все протоколы соединения указаны верно, то есть все устройства подключены к друг другу тем или иным способом.
+
+Всё?
 
 Подробности будут позже. Автор данного readme сам ещё не всё понимает
 
@@ -39,6 +41,7 @@ git clone https://github.com/olyashik/API.git
 ## Кот дня: 
 
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/24378a34-6aa4-4327-9d87-3a291478accd" />
+
 
 
 

@@ -1,4 +1,5 @@
 import serial
+import biba
 
 azimut0 = 0
 elev0 = 0
@@ -8,7 +9,7 @@ ser = serial.Serial('/dev/ttuACM0', 115200, timeout=1)
 while True:
         print("Elevation and Azimut, kudasai...\n")
         try:
-          elev, azimut = map(int, input().split())
+          elev, azimut = biba.data.split()
           if (elev == 91 and azimut == 361):
             print("Point (＾• ω •＾)!!!\n")
             data_string = f"{azimut0},{elev0}\n"

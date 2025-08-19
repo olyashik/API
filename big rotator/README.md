@@ -11,7 +11,8 @@
 sudo pip3 install paramico 
 ```
 
-![alt text](image.png)
+<img width="1100" height="985" alt="image" src="https://github.com/user-attachments/assets/e5415bc6-cd29-478b-ad39-12e6f7f38bf3" />
+
 
 4. Замените данные в скрипте sshmind.py следующим образом:
 ```

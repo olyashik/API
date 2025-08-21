@@ -2,9 +2,6 @@ import utils
 from base_commands import ProtivChStrMove, PoChStrMove, PoChStrDown, ProtivChStrDown, Step, StopMove, StopDown, step_motor_down, step_motor_move
 from machine import UART, Pin
 
-from mind import azimut, azimut0
-
-
 # Возвращение в исхоную точку
 def PointZeroMove(Elev):
     k = 1

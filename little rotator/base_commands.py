@@ -1,4 +1,3 @@
-from machine import Pin
 from utils import in1, in2, in3, in4, in5, in6, in7,in8, stepSequenceCW, stepSequenceCCW
 import time
 
@@ -44,6 +43,7 @@ def PoChStrMove(steps1):
     while j < steps1:
         for i in range(4):
             step_motor_move(stepSequenceCW[i], 12)
+            step_motor_move(stepSequenceCCW[i], 0)
         j += 1
         
 # Вращение нижнего двигателя против часовой стрелки
@@ -52,6 +52,7 @@ def ProtivChStrMove(steps1):
     while j < steps1:
         for i in range(4):
             step_motor_move(stepSequenceCCW[i], 12)
+            step_motor_move(stepSequenceCW[i], 0)
         j += 1
 
 # Вращение нижнего двигателя по часовой стрелке
@@ -60,6 +61,7 @@ def PoChStrDown(steps1):
     while j < steps1:
         for i in range(4):
             step_motor_down(stepSequenceCW[i], 12)
+            step_motor_move(stepSequenceCCW[i], 0)
         j += 1
 
 # Вращение нижнего двигателя против часовой стрелки
@@ -68,5 +70,6 @@ def ProtivChStrDown(steps1):
     while j < steps1:
         for i in range(4):
             step_motor_down(stepSequenceCCW[i], 12)
+            step_motor_move(stepSequenceCW[i], 0)
         j += 1
 

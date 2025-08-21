@@ -2,20 +2,20 @@ from utils import in1, in2, in3, in4, in5, in6, in7,in8, stepSequenceCW, stepSeq
 import time
 
 # Функция для выполнения одного шага
-def step_motor_move(step, Time):
+def step_motor_move(step):
     in1.value(step[0])
     in2.value(step[1])
     in3.value(step[2])
     in4.value(step[3])
-    time.sleep_ms(Time)  # Задержка между шагами
+    time.sleep_ms(10)  # Задержка между шагами
 
 # Функция для выполнения одного шага
-def step_motor_down(step, Time):
+def step_motor_down(step):
     in5.value(step[0])
     in6.value(step[1])
     in7.value(step[2])
     in8.value(step[3])
-    time.sleep_ms(Time)  # Задержка между шагами
+    time.sleep_ms(10)  # Задержка между шагами
 
 # Остановка верхнего двигателя
 def StopMove():
@@ -42,8 +42,8 @@ def PoChStrMove(steps1):
     j = 0
     while j < steps1:
         for i in range(4):
-            step_motor_move(stepSequenceCW[i], 12)
-            step_motor_move(stepSequenceCCW[i], 0)
+            step_motor_move(stepSequenceCW[i])
+            step_motor_move(stepSequenceCCW[i])
         j += 1
         
 # Вращение нижнего двигателя против часовой стрелки
@@ -51,8 +51,8 @@ def ProtivChStrMove(steps1):
     j = 0
     while j < steps1:
         for i in range(4):
-            step_motor_move(stepSequenceCCW[i], 12)
-            step_motor_move(stepSequenceCW[i], 0)
+            step_motor_move(stepSequenceCCW[i])
+            step_motor_move(stepSequenceCW[i])
         j += 1
 
 # Вращение нижнего двигателя по часовой стрелке
@@ -60,8 +60,8 @@ def PoChStrDown(steps1):
     j = 0
     while j < steps1:
         for i in range(4):
-            step_motor_down(stepSequenceCW[i], 12)
-            step_motor_move(stepSequenceCCW[i], 0)
+            step_motor_down(stepSequenceCW[i])
+            step_motor_move(stepSequenceCCW[i])
         j += 1
 
 # Вращение нижнего двигателя против часовой стрелки
@@ -69,7 +69,7 @@ def ProtivChStrDown(steps1):
     j = 0
     while j < steps1:
         for i in range(4):
-            step_motor_down(stepSequenceCCW[i], 12)
-            step_motor_move(stepSequenceCW[i], 0)
+            step_motor_down(stepSequenceCCW[i])
+            step_motor_move(stepSequenceCW[i])
         j += 1
 

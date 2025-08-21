@@ -23,8 +23,8 @@ def PoDownPoMove(SA, SE):
     if SA >= SE:
         while j < SE:
             for i in range(4):
-                step_motor_down(utils.stepSequenceCW[i], 8)
-                step_motor_move(utils.stepSequenceCW[i], 8)
+                step_motor_down(utils.stepSequenceCW[i])
+                step_motor_move(utils.stepSequenceCW[i])
             j += 1
         StopMove()
         PoChStrDown(SA - SE)
@@ -32,8 +32,8 @@ def PoDownPoMove(SA, SE):
     elif SE > SA:
         while j < SA:
             for i in range(4):
-                step_motor_down(utils.stepSequenceCW[i], 8)
-                step_motor_move(utils.stepSequenceCW[i], 8)
+                step_motor_down(utils.stepSequenceCW[i])
+                step_motor_move(utils.stepSequenceCW[i])
             j += 1
         StopDown()
         PoChStrMove(SE - SA)
@@ -44,16 +44,16 @@ def ProtivDownProtivMove(SA, SE):
     if SA >= SE:
         while j < SE:
             for i in range(4):
-                step_motor_down(utils.stepSequenceCCW[i], 8)
-                step_motor_move(utils.stepSequenceCCW[i], 8)
+                step_motor_down(utils.stepSequenceCCW[i])
+                step_motor_move(utils.stepSequenceCCW[i])
             j += 1
         StopMove()
         ProtivChStrDown(SA - SE)
     elif SE > SA:
         while j < SA:
             for i in range(4):
-                step_motor_down(utils.stepSequenceCCW[i], 8)
-                step_motor_move(utils.stepSequenceCCW[i], 8)
+                step_motor_down(utils.stepSequenceCCW[i])
+                step_motor_move(utils.stepSequenceCCW[i])
             j += 1
         StopDown()
         ProtivChStrMove(SE - SA)
@@ -64,16 +64,16 @@ def PoDownProtivMove(SA, SE):
     if SA >= SE:
         while j < SE:
             for i in range(4):
-                step_motor_down(utils.stepSequenceCW[i], 8)
-                step_motor_move(utils.stepSequenceCCW[i], 8)
+                step_motor_down(utils.stepSequenceCW[i])
+                step_motor_move(utils.stepSequenceCCW[i])
             j += 1
         StopMove()
         PoChStrDown(SA - SE)
     elif SE > SA:
         while j < SA:
             for i in range(4):
-                step_motor_down(utils.stepSequenceCW[i], 8)
-                step_motor_move(utils.stepSequenceCCW[i], 8)
+                step_motor_down(utils.stepSequenceCW[i])
+                step_motor_move(utils.stepSequenceCCW[i])
             j += 1
         StopDown()
         ProtivChStrMove(SE - SA)
@@ -84,16 +84,16 @@ def ProtivDownPoMove(SA, SE):
     if SA >= SE:
         while j < SE:
             for i in range(4):
-                step_motor_down(utils.stepSequenceCCW[i], 8)
-                step_motor_move(utils.stepSequenceCW[i], 8)
+                step_motor_down(utils.stepSequenceCCW[i])
+                step_motor_move(utils.stepSequenceCW[i])
             j += 1
         StopMove()
         ProtivChStrDown(SA - SE)
     elif SE > SA:
         while j < SA:
             for i in range(4):
-                step_motor_down(utils.stepSequenceCCW[i], 8)
-                step_motor_move(utils.stepSequenceCW[i], 8)
+                step_motor_down(utils.stepSequenceCCW[i])
+                step_motor_move(utils.stepSequenceCW[i])
             j += 1
         StopDown()
         PoChStrMove(SE - SA)
